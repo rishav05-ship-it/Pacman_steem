@@ -1,0 +1,36 @@
+
+game.tos: Game.o EFFECTS.o EVENTS.o MODEL.o MUSIC.o pos_sta.o PSG.o RASTER.o RENDERER.o BITMAPS.o
+	cc68x -g Game.o EFFECTS.o EVENTS.o MODEL.o MUSIC.o pos_sta.o PSG.o RASTER.o RENDERER.o BITMAPS.o -o game.tos
+
+Game.o: Game.c 
+	cc68x -g -c Game.c
+
+EFFECTS.o: EFFECTS.c EFFECTS.h
+	cc68x -g -c EFFECTS.c
+
+EVENTS.o: EVENTS.c EVENTS.h
+	cc68x -g -c EVENTS.c
+
+MODEL.o: MODEL.c MODEL.h
+	cc68x -g -c MODEL.c
+
+MUSIC.o: MUSIC.c MUSIC.h
+	cc68x -g -c MUSIC.c
+
+pos_sta.o: pos_sta.c pos_sta.h
+	cc68x -g -c pos_sta.c
+
+PSG.o: PSG.c PSG.h
+	cc68x -g -c PSG.c
+
+BITMAPS.o: BITMAPS.c BITMAPS.h
+	cc68x -g -c BITMAPS.c
+
+RASTER.o: RASTER.c RASTER.h
+	cc68x -g -c RASTER.c
+
+RENDERER.o: RENDERER.c RENDERER.h
+	cc68x -g -c RENDERER.c
+
+clean:
+	remove.tos
